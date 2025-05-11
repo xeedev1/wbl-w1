@@ -41,7 +41,7 @@ Semantic HTML introduces meaning to the web page structure. Instead of using gen
   ```html
   <article>
     <h2>Latest Blog Post</h2>
-    <time datetime="2024-03-20">March 20, 2024</time>
+    <time datetime="2025-03-20">March 20, 2025</time>
     <p>Article content...</p>
   </article>
   ```
@@ -64,7 +64,7 @@ Semantic HTML introduces meaning to the web page structure. Instead of using gen
       <p>Email: contact@example.com</p>
       <p>Phone: (555) 123-4567</p>
     </div>
-    <p>&copy; 2024 Your Company. All rights reserved.</p>
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
   </footer>
   ```
 
@@ -96,7 +96,7 @@ Semantic HTML introduces meaning to the web page structure. Instead of using gen
 
 * `<time>`: Represents dates and times
   ```html
-  <time datetime="2024-03-20T15:30">March 20, 2024 at 3:30 PM</time>
+  <time datetime="2025-03-20T15:30">March 20, 2025 at 3:30 PM</time>
   ```
 
 #### **Why it matters:**

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .example {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .explanation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #007bff;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .image-example {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            align-items: center;
+        }
+        .image-example img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 4px;
+        }
+        .image-description {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Understanding Semantic HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="#main-content">Main Content</a></li>
+                <li><a href="#article-section">Article Example</a></li>
+                <li><a href="#aside-section">Sidebar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="example">
+            <h2>What is Semantic HTML?</h2>
+            <p>Semantic HTML introduces meaning to the web page structure. Instead of using generic <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> tags, semantic tags clearly describe their purpose both to the browser and to developers.</p>
+            
+            <div class="explanation">
+                <h3>Why Use Semantic HTML?</h3>
+                <ul>
+                    <li><strong>Accessibility:</strong> Screen readers understand and navigate semantic elements better</li>
+                    <li><strong>SEO:</strong> Search engines prioritize semantically structured content</li>
+                    <li><strong>Maintainability:</strong> Code is easier to read and manage</li>
+                    <li><strong>Future-proofing:</strong> More adaptable to new technologies and devices</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2>Key Semantic Elements</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>&lt;header&gt;</h3>
+                    <p>Represents the top section of a page or section</p>
+                </div>
+                <div class="feature-item">
+                    <h3>&lt;main&gt;</h3>
+                    <p>Denotes the central content of the document</p>
+                </div>
+                <div class="feature-item">
+                    <h3>&lt;section&gt;</h3>
+                    <p>Groups related content with a common theme</p>
+                </div>
+                <div class="feature-item">
+                    <h3>&lt;article&gt;</h3>
+                    <p>Used for self-contained content pieces</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Example -->
+        <article id="article-section" class="example">
+            <h2>Latest Blog Post</h2>
+            <time datetime="2023-12-15">December 15, 2023</time>
+            <p>This is an example of an <code>&lt;article&gt;</code> element, which is used for self-contained content like blog posts or news stories.</p>
+            
+            <figure>
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643" 
+                     alt="A person writing in a notebook with a laptop in the background"
+                     width="400"
+                     height="300">
+                <figcaption>This is a figure caption using <code>&lt;figcaption&gt;</code></figcaption>
+            </figure>
+
+            <p>Here's some <mark>highlighted text</mark> using the <code>&lt;mark&gt;</code> tag.</p>
+        </article>
+    </main>
+
+    <!-- Sidebar -->
+    <aside id="aside-section" class="example">
+        <h3>Related Information</h3>
+        <ul>
+            <li><a href="#">HTML5 Documentation</a></li>
+            <li><a href="#">Web Accessibility Guidelines</a></li>
+            <li><a href="#">Best Practices</a></li>
+        </ul>
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact-info">
+            <p>Email: example@semantic-html.com</p>
+            <p>Phone: (555) 123-4567</p>
+        </div>
+        <p>&copy; Semantic HTML Demo. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Accessibility Guide</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #ecf0f1;
+            --accent-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --error-color: #e74c3c;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--text-color);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .example {
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .explanation {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 8px 8px 0;
+        }
+
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            padding: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .good-example {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .bad-example {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .tool-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tool-item {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .contrast-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .contrast-item {
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .focus-demo {
+            padding: 20px;
+            border: 2px solid transparent;
+        }
+
+        .focus-demo:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        .image-example {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .image-example img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .image-description {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <h1>HTML Accessibility Guide</h1>
+        <p>A comprehensive guide to making web content accessible to everyone</p>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#attributes">Attributes</a></li>
+                <li><a href="#aria">ARIA Roles</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#tools">Testing Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="example" id="attributes">
+            <h2>Key Accessibility Attributes</h2>
+            <div class="explanation">
+                <p>HTML attributes play a crucial role in making web content accessible. Here are some essential attributes:</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Basic Attributes</h3>
+                    <ul>
+                        <li><code>alt</code> for images</li>
+                        <li><code>title</code> for tooltips</li>
+                        <li><code>lang</code> for language</li>
+                        <li><code>tabindex</code> for keyboard navigation</li>
+                    </ul>
+                </div>
+                <div class="feature-item">
+                    <h3>Form Attributes</h3>
+                    <ul>
+                        <li><code>required</code> for mandatory fields</li>
+                        <li><code>aria-describedby</code> for descriptions</li>
+                        <li><code>aria-label</code> for labels</li>
+                        <li><code>aria-invalid</code> for validation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Form Example with Accessibility Attributes</h3>
+                <form role="search" aria-label="Search form">
+                    <label for="search">Search:</label>
+                    <input type="search" 
+                           id="search" 
+                           name="search" 
+                           aria-describedby="search-hint"
+                           required>
+                    <span id="search-hint">Enter keywords to search the site</span>
+                    <button type="submit" aria-label="Submit search">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="example" id="aria">
+            <h2>ARIA Roles and Landmarks</h2>
+            <div class="explanation">
+                <p>ARIA (Accessible Rich Internet Applications) roles help define the purpose of elements to assistive technologies.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Common ARIA Roles</h3>
+                    <ul>
+                        <li><code>role="alert"</code> for important messages</li>
+                        <li><code>role="banner"</code> for site header</li>
+                        <li><code>role="complementary"</code> for sidebars</li>
+                        <li><code>role="contentinfo"</code> for footers</li>
+                        <li><code>role="navigation"</code> for navigation menus</li>
+                        <li><code>role="search"</code> for search forms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>ARIA Live Regions Example</h3>
+                <div role="alert" aria-live="polite">
+                    This is an important message that will be announced by screen readers.
+                </div>
+                <button onclick="document.querySelector('[role=alert]').textContent = 'Message updated!'">
+                    Update Message
+                </button>
+            </div>
+        </section>
+
+        <section class="example" id="examples">
+            <h2>Accessibility Examples</h2>
+
+            <div class="example">
+                <h3>Images</h3>
+                <div class="good-example">
+                    <h4>Good Example:</h4>
+                    <div class="image-example">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                             alt="A laptop displaying code on a dark screen, representing web development"
+                             width="300"
+                             height="200">
+                        <div class="image-description">
+                            <p>This image has a descriptive alt text that explains what the image shows and its context.</p>
+                            <code>alt="A laptop displaying code on a dark screen, representing web development"</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="bad-example">
+                    <h4>Bad Example:</h4>
+                    <div class="image-example">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                             alt="image"
+                             width="300"
+                             height="200">
+                        <div class="image-description">
+                            <p>This image has a non-descriptive alt text that doesn't provide any useful information.</p>
+                            <code>alt="image"</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Decorative Images</h3>
+                <div class="good-example">
+                    <h4>Good Example:</h4>
+                    <div class="image-example">
+                        <img src="https://images.unsplash.com/photo-1557683316-973673baf926" 
+                             alt=""
+                             role="presentation"
+                             width="300"
+                             height="200">
+                        <div class="image-description">
+                            <p>This decorative image has an empty alt text and role="presentation" to indicate it's purely decorative.</p>
+                            <code>alt="" role="presentation"</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Links</h3>
+                <div class="good-example">
+                    <h4>Good Example:</h4>
+                    <a href="/about">Learn more about our company</a>
+                </div>
+                <div class="bad-example">
+                    <h4>Bad Example:</h4>
+                    <a href="/about">Click here</a>
+                </div>
+            </div>
+
+            <div class="example">
+                <h3>Tables</h3>
+                <table>
+                    <caption>Monthly Sales Report</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Month</th>
+                            <th scope="col">Sales</th>
+                            <th scope="col">Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">January</th>
+                            <td>$10,000</td>
+                            <td>+5%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">February</th>
+                            <td>$12,000</td>
+                            <td>+20%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="example" id="tools">
+            <h2>Accessibility Testing Tools</h2>
+            <div class="tool-list">
+                <div class="tool-item">
+                    <h3>Browser DevTools</h3>
+                    <ul>
+                        <li>Chrome Lighthouse</li>
+                        <li>Firefox Accessibility Inspector</li>
+                        <li>Edge Accessibility Insights</li>
+                    </ul>
+                </div>
+                <div class="tool-item">
+                    <h3>Screen Readers</h3>
+                    <ul>
+                        <li>NVDA (Windows)</li>
+                        <li>VoiceOver (Mac)</li>
+                        <li>JAWS (Windows)</li>
+                    </ul>
+                </div>
+                <div class="tool-item">
+                    <h3>Online Tools</h3>
+                    <ul>
+                        <li>WAVE Web Accessibility Evaluation Tool</li>
+                        <li>aXe Accessibility Testing</li>
+                        <li>HTML_CodeSniffer</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="example">
+            <h2>Color Contrast Examples</h2>
+            <div class="contrast-demo">
+                <div class="contrast-item" style="background-color: #000; color: #fff;">
+                    Good Contrast (21:1)
+                </div>
+                <div class="contrast-item" style="background-color: #666; color: #fff;">
+                    Good Contrast (5.74:1)
+                </div>
+                <div class="contrast-item" style="background-color: #999; color: #fff;">
+                    Poor Contrast (2.84:1)
+                </div>
+            </div>
+        </section>
+
+        <section class="example">
+            <h2>Keyboard Navigation</h2>
+            <div class="focus-demo" tabindex="0">
+                <p>This element is focusable. Try using the Tab key to navigate to it.</p>
+                <button>Focusable Button 1</button>
+                <button>Focusable Button 2</button>
+            </div>
+        </section>
+    </main>
+
+    <aside role="complementary" aria-label="Additional resources">
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><a href="https://www.w3.org/WAI/">W3C Web Accessibility Initiative</a></li>
+            <li><a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 Guidelines</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">MDN Accessibility Guide</a></li>
+        </ul>
+    </aside>
+
+    <footer role="contentinfo">
+        <p>This guide demonstrates various accessibility features and best practices for web development.</p>
+        <p>&copy; HTML Accessibility Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

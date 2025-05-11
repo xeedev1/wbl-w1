@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio | Xee</title>
+    
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Load Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Custom colors for our black and yellow theme
+                    colors: {
+                        'custom-yellow': '#FFD700', // Gold color for primary accents
+                        'custom-orange': '#FFA500', // Orange color for hover states
+                    },
+                    // Custom font family
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    // Custom animations
+                    animation: {
+                        'gradient': 'gradient 15s ease infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    // Animation keyframes
+                    keyframes: {
+                        gradient: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' },
+                        },
+                    },
+                    // Custom background gradients
+                    backgroundImage: {
+                        'gradient-text': 'linear-gradient(45deg, #FFD700, #FFA500)',
+                        'gradient-animated': 'linear-gradient(-45deg, #000000, #1a1a1a, #FFD700, #000000)',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<!-- Main body with base styles -->
+<body class="bg-black font-poppins text-white">
+    <!-- Navigation Bar
+         - Fixed position with blur effect
+         - Semi-transparent black background
+         - Yellow border bottom
+         - Responsive design -->
+    <nav class="fixed w-full bg-black/80 backdrop-blur-md z-50 border-b border-custom-yellow/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo with gradient text effect -->
+                <a href="#" class="text-2xl font-bold bg-gradient-text bg-clip-text text-transparent">Xee</a>
+                <!-- Navigation links with hover effects -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-custom-yellow transition">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-custom-yellow transition">About</a>
+                    <a href="#projects" class="text-gray-300 hover:text-custom-yellow transition">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-custom-yellow transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section
+         - Full screen height
+         - Animated gradient background
+         - Two-column layout on desktop
+         - Centered content -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 bg-gradient-animated bg-[length:400%_400%] animate-gradient">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Left column: Text content -->
+                <div class="md:w-1/2 text-white">
+                    <!-- Main heading with gradient text -->
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="bg-gradient-text bg-clip-text text-transparent">Xee</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        A passionate developer crafting beautiful digital experiences
+                    </p>
+                    <!-- Call-to-action buttons -->
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-custom-yellow text-black px-8 py-3 rounded-full hover:bg-custom-orange hover:-translate-y-0.5 transition-all duration-300">
+                            Get in Touch
+                        </a>
+                        <a href="#projects" class="border-2 border-custom-yellow text-custom-yellow px-8 py-3 rounded-full hover:bg-custom-yellow hover:text-black transition-all duration-300">
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+                <!-- Right column: Profile image with animation -->
+                <div class="md:w-1/2 mt-12 md:mt-0">
+                    <div class="relative">
+                        <!-- Animated background circle -->
+                        <div class="w-64 h-64 mx-auto bg-custom-yellow/20 rounded-full animate-pulse-slow"></div>
+                        <!-- Profile image with border and shadow -->
+                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                                 alt="Profile" 
+                                 class="w-60 h-60 rounded-full object-cover border-4 border-custom-yellow shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section
+         - Two-column layout
+         - Skills cards with hover effects
+         - Custom styling for icons -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 bg-gradient-text bg-clip-text text-transparent">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left column: About text and skills -->
+                <div>
+                    <p class="text-gray-300 mb-6">
+                        I'm a passionate developer with expertise in creating modern web applications. 
+                        With a strong foundation in both frontend and backend technologies, I bring ideas to life 
+                        through clean, efficient, and scalable code.
+                    </p>
+                    <!-- Skills grid -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Frontend skills card -->
+                        <div class="p-4 bg-gray-900 rounded-lg hover:scale-105 transition-transform duration-300 border border-custom-yellow/10 hover:border-custom-yellow hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                            <h3 class="font-semibold mb-2 text-custom-yellow">Frontend</h3>
+                            <p class="text-gray-400">React, Vue, Tailwind CSS</p>
+                        </div>
+                        <!-- Backend skills card -->
+                        <div class="p-4 bg-gray-900 rounded-lg hover:scale-105 transition-transform duration-300 border border-custom-yellow/10 hover:border-custom-yellow hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                            <h3 class="font-semibold mb-2 text-custom-yellow">Backend</h3>
+                            <p class="text-gray-400">Node.js, Python, SQL</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right column: Expertise cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Clean Code card -->
+                    <div class="p-6 bg-gray-900 rounded-lg hover:scale-105 transition-transform duration-300 border border-custom-yellow/10 hover:border-custom-yellow hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                        <i class="fas fa-code text-3xl text-custom-yellow mb-4"></i>
+                        <h3 class="font-semibold mb-2 text-custom-yellow">Clean Code</h3>
+                        <p class="text-gray-400">Writing maintainable and efficient code</p>
+                    </div>
+                    <!-- UI/UX Design card -->
+                    <div class="p-6 bg-gray-900 rounded-lg hover:scale-105 transition-transform duration-300 border border-custom-yellow/10 hover:border-custom-yellow hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                        <i class="fas fa-paint-brush text-3xl text-custom-yellow mb-4"></i>
+                        <h3 class="font-semibold mb-2 text-custom-yellow">UI/UX Design</h3>
+                        <p class="text-gray-400">Creating beautiful user experiences</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section
+         - Three-column grid layout
+         - Project cards with hover effects
+         - Image zoom on hover -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 bg-gradient-text bg-clip-text text-transparent">Featured Projects</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project Card 1: E-commerce Platform -->
+                <div class="bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 border border-custom-yellow/10 hover:border-custom-yellow hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                             alt="E-commerce Platform" 
+                             class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-custom-yellow">E-commerce Platform</h3>
+                        <p class="text-gray-400 mb-4">A modern e-commerce solution with real-time inventory management</p>
+                        <!-- Technology tags -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Task Management App -->
+                <div class="bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 border border-custom-yellow/10 hover:border-custom-yellow hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                             alt="Task Management App" 
+                             class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-custom-yellow">Task Management App</h3>
+                        <p class="text-gray-400 mb-4">A collaborative task management platform with real-time updates</p>
+                        <!-- Technology tags -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">Firebase</span>
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: AI Chat Application -->
+                <div class="bg-black rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 border border-custom-yellow/10 hover:border-custom-yellow hover:shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                             alt="AI Chat Application" 
+                             class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-custom-yellow">AI Chat Application</h3>
+                        <p class="text-gray-400 mb-4">An intelligent chat application powered by machine learning</p>
+                        <!-- Technology tags -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-custom-yellow/10 text-custom-yellow rounded-full text-sm">Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section
+         - Centered form layout
+         - Custom form styling
+         - Responsive design -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 bg-gradient-text bg-clip-text text-transparent">Get in Touch</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <!-- Name and Email fields -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-300 mb-2">Name</label>
+                            <input type="text" 
+                                   class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-custom-yellow/20 text-white focus:border-custom-yellow focus:ring-2 focus:ring-custom-yellow/20 transition"
+                                   placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" 
+                                   class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-custom-yellow/20 text-white focus:border-custom-yellow focus:ring-2 focus:ring-custom-yellow/20 transition"
+                                   placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <!-- Message field -->
+                    <div>
+                        <label class="block text-gray-300 mb-2">Message</label>
+                        <textarea rows="4" 
+                                  class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-custom-yellow/20 text-white focus:border-custom-yellow focus:ring-2 focus:ring-custom-yellow/20 transition"
+                                  placeholder="Your message here..."></textarea>
+                    </div>
+                    <!-- Submit button -->
+                    <button type="submit" 
+                            class="w-full bg-custom-yellow text-black px-8 py-3 rounded-lg hover:bg-custom-orange hover:-translate-y-0.5 transition-all duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer
+         - Social media links
+         - Copyright information
+         - Responsive layout -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-custom-yellow/20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo and tagline -->
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold bg-gradient-text bg-clip-text text-transparent">Xee</h3>
+                    <p class="text-gray-400 mt-2">Creating digital experiences that matter</p>
+                </div>
+                <!-- Social media links -->
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-custom-yellow transition" aria-label="GitHub">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-custom-yellow transition" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-custom-yellow transition" aria-label="Twitter">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright section -->
+            <div class="border-t border-custom-yellow/20 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Xee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
